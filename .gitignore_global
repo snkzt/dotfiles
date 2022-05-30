@@ -1,0 +1,7 @@
+.vscode
+coverage.txt
+.envrc
+vendor/
+bin/
+
+.idea/

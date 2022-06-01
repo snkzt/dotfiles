@@ -1,7 +1,7 @@
-.vscode
 coverage.txt
+.vscode
 .envrc
+.DS_Store
+.idea/
 vendor/
 bin/
-
-.idea/

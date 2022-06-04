@@ -3,6 +3,7 @@ alias -g la="ls -a"
 alias -g lla="ls -la"
 
 alias -g gal="gcloud auth login"
+alias -g m="cd ~/Developer/kouzoh"
 
 alias -g k="kubectl"
 alias -g kcx="kubectx"
@@ -15,3 +16,7 @@ if [ -f '/Users/snkzt/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/snkzt/goo
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/snkzt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/snkzt/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(direnv hook zsh)"
+
+eval "$(nodenv init -)"

@@ -1,13 +1,13 @@
-[url "git@github.com:"]
-    pushInsteadOf = https://github.com/
-    pushInsteadOf = git://github.com/
+# [url "git@github.com:"]
+#     pushInsteadOf = https://github.com/
+#     pushInsteadOf = git://github.com/
 
-[url "git@github.com:kouzoh"]
-    insteadOf = https://github.com/kouzoh
-    # private なorganizationがあれば追記する
+# [url "git@github.com:kouzoh"]
+#     insteadOf = https://github.com/kouzoh
+#     # private なorganizationがあれば追記する
 
-[url "git://github.com/"]
-    insteadOf = https://github.com/
+# [url "git://github.com/"]
+#     insteadOf = https://github.com/
 
 [user]
     name  = snkzt

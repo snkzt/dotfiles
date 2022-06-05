@@ -20,3 +20,13 @@ if [ -f '/Users/snkzt/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/snk
 eval "$(direnv hook zsh)"
 
 eval "$(nodenv init -)"
+
+# snkzt@C02G40FXML85 mercari-api-jp 
+# PS1="%n@%m %1~ %#" 
+
+# OhMyZsh
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/dotfiles/.oh-my-zsh"
+ZSH_THEME="fwalch"
+
+source $ZSH/oh-my-zsh.sh

@@ -1,0 +1,162 @@
+{
+	"name": "vscode-open-in-github",
+	"displayName": "Open In GitHub",
+	"description": "Provides commands to quickly view the current file on GitHub.",
+	"license": "MIT",
+	"version": "1.16.0",
+	"publisher": "sysoev",
+	"engines": {
+		"vscode": "^1.60.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"multi-root ready",
+		"vscode",
+		"github",
+		"bitbucket",
+		"git"
+	],
+	"homepage": "https://github.com/d4rkr00t/vscode-open-in-github",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/d4rkr00t/vscode-open-in-github.git"
+	},
+	"bugs": "https://github.com/d4rkr00t/vscode-open-in-github/issues",
+	"main": "./out/extension",
+	"icon": "assets/icon.jpg",
+	"activationEvents": [
+		"onCommand:openInGithub.openInGitHubFile",
+		"onCommand:openInGithub.openInGitHubBlame",
+		"onCommand:openInGithub.openInGitHubHistory",
+		"onCommand:openInGithub.copyInGitHubFile",
+		"onCommand:openInGithub.copyInGitHubBlame",
+		"onCommand:openInGithub.copyInGitHubHistory"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "openInGithub.openInGitHubFile",
+				"title": "Open In GitHub: File"
+			},
+			{
+				"command": "openInGithub.openInGitHubBlame",
+				"title": "Open In GitHub: Blame"
+			},
+			{
+				"command": "openInGithub.openInGitHubHistory",
+				"title": "Open In GitHub: History"
+			},
+			{
+				"command": "openInGithub.copyInGitHubFile",
+				"title": "Copy GitHub URL: File"
+			},
+			{
+				"command": "openInGithub.copyInGitHubBlame",
+				"title": "Copy GitHub URL: Blame"
+			},
+			{
+				"command": "openInGithub.copyInGitHubHistory",
+				"title": "Copy GitHub URL: History"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Open in GitHub",
+			"properties": {
+				"openInGitHub.defaultBranch": {
+					"scope": "resource",
+					"type": "string",
+					"default": "master",
+					"description": "Controls which branch will be treated as default."
+				},
+				"openInGitHub.defaultRemote": {
+					"scope": "resource",
+					"type": "string",
+					"default": "origin",
+					"description": "Controls which remote will be treated as default."
+				},
+				"openInGitHub.repositoryType": {
+					"scope": "resource",
+					"type": "string",
+					"default": "auto",
+					"enum": [
+						"auto",
+						"github",
+						"bitbucket",
+						"bitbucket-server",
+						"gitlab"
+					],
+					"enumDescriptions": [
+						"Auto detection of repository type",
+						"Github",
+						"Bitbucket",
+						"Bitbucket Server (uses /projects/<project>/repos/<repo> repository URL scheme)",
+						"Gitlab"
+					],
+					"description": "Defines type of repository"
+				},
+				"openInGithub.maxBuffer": {
+					"scope": "resource",
+					"type": "number",
+					"default": 204800,
+					"description": "Controls the `maxBuffer` allowed when executing git commands."
+				},
+				"openInGitHub.excludeCurrentRevision": {
+					"scope": "resource",
+					"type": "boolean",
+					"default": false,
+					"description": "Determines whether to disable URL suggestions for the current revision (commit SHA)"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "node ./build.js --production",
+		"compile": "tsc --noEmit -p tsconfig.json && node ./build.js",
+		"watch": "node ./build.js --watch",
+		"lint:staged": "lint-staged --no-stash",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"@types/mocha": "^5.2.5",
+		"@types/node": "^10.12.3",
+		"@types/ramda": "^0.25.41",
+		"esbuild": "^0.13.15",
+		"lint-staged": "^10.1.3",
+		"pre-commit": "^1.2.2",
+		"prettier": "^1.19.1",
+		"typescript": "^4.5.4",
+		"vscode": "^1.1.37"
+	},
+	"lint-staged": {
+		"*.ts": [
+			"prettier --write",
+			"git add"
+		]
+	},
+	"pre-commit": [
+		"lint:staged"
+	],
+	"config": {
+		"commitizen": {
+			"path": "cz-conventional-changelog"
+		}
+	},
+	"dependencies": {
+		"open": "^7.4.2",
+		"ramda": "^0.25.0",
+		"clipboardy": "^2.3.0"
+	},
+	"__metadata": {
+		"id": "b70cf6bc-1796-4191-bcfc-abeb77997ea7",
+		"publisherId": "c0885fa3-3b61-4f83-b035-0d441817979b",
+		"publisherDisplayName": "sysoev",
+		"targetPlatform": "undefined",
+		"updated": false,
+		"isPreReleaseVersion": false,
+		"preRelease": false,
+		"installedTimestamp": 1654414007812
+	}
+}

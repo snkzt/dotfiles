@@ -27,7 +27,7 @@ eval "$(nodenv init -)"
 
 # OhMyZsh
 # Plugin variable shoud be defined before initialise zsh 
-plugins=(web-search copypath copybuffer dirhistory jsontools)
+plugins=(web-search copypath copybuffer dirhistory jsontools macos)
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/dotfiles/.oh-my-zsh"
 ZSH_THEME="fwalch"

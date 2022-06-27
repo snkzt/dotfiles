@@ -32,7 +32,6 @@ plugins=(web-search copypath copybuffer dirhistory jsontools macos)
 export ZSH="$HOME/dotfiles/.oh-my-zsh"
 ZSH_THEME="fwalch"
 source $ZSH/oh-my-zsh.sh
-plugins=(web-search)
 
 # Kubectl functions
 kubectl() {
@@ -88,5 +87,4 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 chruby ruby-3.1.1
 
-# snkzt@C02G40FXML85 mercari-api-jp 
 # PS1="%n@%m %1~ %#" 
